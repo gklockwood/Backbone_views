@@ -32,6 +32,14 @@
 	    		var template = _.template($('#task_template').html(), {});
 
 	    		this.$el.html(template);
+	    	},
+
+	    	events:{
+	    		"click input[type=button]" : "addTask"
+	    	},
+
+	    	addTask: function(){
+	    		alert($('#task_desc').val() + "task has been added");
 	    	}
 
 	    })
