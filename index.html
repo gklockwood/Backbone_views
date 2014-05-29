@@ -11,7 +11,32 @@
 </head>
 <body>
 
+<script type="text/javascript" id="task_template">
+     <label>Task: </label>
+     <input type="text" id="task_desc" />
+     <input type="button" value="add_task" id="btn" />
+</script>
+
+<div id="container"></div>
+	
 	<script type="text/javascript">
+	    
+	    Task = Backbone.View.extend({
+	    	el : $('#container'),
+	    	
+	    	initialize: function(){
+	    		this.render();
+	    	},
+
+	    	render: function(){
+	    		var template = _.template($('#task_template').html(), {});
+
+	    		this.$el.html(template);
+	    	}
+
+	    })
+
+	    var task = new Task();
 
 
 	</script>
